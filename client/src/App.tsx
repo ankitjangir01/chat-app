@@ -51,7 +51,7 @@ const App = () => {
         flexGrow: 1
       }}>
         {messages.map((msg, index) => (
-          <div key={index} style={{ marginBottom: 5 }}>
+          <div key={index} style={{ marginBottom: 5, backgroundColor: '#d2edec', padding: '6px 12px', borderRadius: 12, width: 'fit-content' }}>
             {msg}
           </div>
         ))}
