@@ -1,6 +1,7 @@
 // client/src/App.tsx
 import { useEffect, useRef, useState } from 'react';
 const wsUrl = import.meta.env.VITE_WS_URL;
+const appName = import.meta.env.VITE_APP_NAME;
 
 const App = () => {
   const [messages, setMessages] = useState<string[]>([]);
@@ -38,7 +39,7 @@ const App = () => {
 
   return (
     <div style={{ padding: 20, maxWidth: 600, height: '100%', margin: '0 auto', display: 'flex', flexDirection: 'column' }}>
-      <h2>🟢 Hi Bhindi!</h2>
+      <h2>🟢 {appName || "Chat-app"}</h2>
 
       <div style={{
         border: '1px solid #ccc',
