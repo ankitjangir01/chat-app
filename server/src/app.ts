@@ -4,7 +4,7 @@ import WebSocket, { WebSocketServer } from 'ws';
 import cors from 'cors';
 
 const app = express();
-
+const PORT = process.env.PORT || 3000;
 app.use(cors());
 
 // Set up basic route
@@ -13,8 +13,8 @@ app.get('/', (req, res) => {
 });
 
 // Create HTTP server for Express
-const server: Server = app.listen(3000, () => {
-  console.log('Server running on port 3000');
+const server: Server = app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
 
 const wss = new WebSocketServer({ server });
