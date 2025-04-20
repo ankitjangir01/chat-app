@@ -1,5 +1,6 @@
 // client/src/App.tsx
 import { useEffect, useRef, useState } from 'react';
+const wsUrl = import.meta.env.VITE_WS_URL;
 
 const App = () => {
   const [messages, setMessages] = useState<string[]>([]);
@@ -7,7 +8,7 @@ const App = () => {
   const socketRef = useRef<WebSocket | null>(null);
 
   useEffect(() => {
-    const socket = new WebSocket('ws://localhost:3000');
+    const socket = new WebSocket(wsUrl);
     socketRef.current = socket;
 
     socket.onopen = () => {
